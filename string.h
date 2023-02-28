@@ -3,17 +3,16 @@
 #include <cstring>
 #include <iostream>
 
-
 class String {
 
   private:
     // строку хранить буду в массиве из чаров
     // нужен указатель на массив из чаров
-    char* arr;
+    char* arr = nullptr;
     // нужна переменная с количеством символов
-    size_t sz;
+    size_t sz = 0;
     // нужна переменная с количеством выделенной памяти
-    size_t cap;
+    size_t cap = 0;
 
   public:
     // конструктор от C-style строки
@@ -52,7 +51,7 @@ class String {
 
     char& operator[](size_t index);
 
-    const char& operator[](size_t index) const ;
+    const char& operator[](size_t index) const;
 
     char& front();
 
@@ -60,41 +59,41 @@ class String {
 
     const char& back() const;
 
-    char& back() ;
+    char& back();
 
     String& operator+=(const String& other);
 
-    size_t find(const String& substring) const ;
+    size_t find(const String& substring) const;
 
     size_t rfind(const String& substring) const;
 
-    String substr(const size_t& start, const size_t& count) const ;
+    String substr(const size_t& start, const size_t& count) const;
 
-    bool empty() const ;
+    bool empty() const;
 
-    void clear() ;
+    void clear();
 
-    void shrink_to_fit() ;
+    void shrink_to_fit();
 
-    const char* data() const ;
+    const char* data() const;
 
-    char* data() ;
+    char* data();
 };
 
-bool operator==(const String& s1, const String& s2) ;
+bool operator==(const String& s1, const String& s2);
 
-bool operator!=(const String& s1, const String& s2) ;
+bool operator!=(const String& s1, const String& s2);
 
-bool operator<(const String& a, const String& b) ;
+bool operator<(const String& a, const String& b);
 
-bool operator>(const String& a, const String& b) ;
+bool operator>(const String& a, const String& b);
 
-bool operator>=(const String& a, const String& b) ;
+bool operator>=(const String& a, const String& b);
 
-bool operator<=(const String& a, const String& b) ;
+bool operator<=(const String& a, const String& b);
 
-std::ostream& operator<<(std::ostream& out, const String& s) ;
+std::ostream& operator<<(std::ostream& out, const String& s);
 
-std::istream& operator>>(std::istream& in, String& s) ;
+std::istream& operator>>(std::istream& in, String& s);
 
-String operator+(String a, const String& b) ;
+String operator+(String a, const String& b);
